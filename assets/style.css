@@ -80,3 +80,37 @@ footer a {
 footer a:hover {
     color: #afaca6;
 }
+
+#interest-form {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#name, #email {
+    width: 50%;
+    padding: 8px;
+    margin: 10px 0;
+    margin-bottom: 3em;
+    border: 1px solid #2e2e2e;
+    box-shadow: black 0px 0px 1px;
+    transition: box-shadow 0.3s ease;
+}
+
+
+#name:hover, #email:hover {
+    box-shadow: black 0px 0px 5px;
+}
+
+button {
+    background-color: #88E3EE;
+    color: #001E61;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #afe5eb;
+}
