@@ -19,9 +19,12 @@ if (!$course) {
 $modStmt = $pdo->prepare("SELECT m.ModuleName, pm.Year, s.Name as ModuleLeader
 FROM ProgrammeModules pm
 JOIN Modules m ON pm.ModuleID = m.ModuleID
-JOIN Staffs s ON m.ModuleLeaderID = s.StaffID
+JOIN Staff s ON m.ModuleLeaderID = s.StaffID
 WHERE pm.ProgrammeID = ?
 ORDER BY pm.Year ASC");
+
+$modStmt->execute([$id]);
+$modules = $modStmt->fetchAll();
 ?>
 
 <main>
@@ -37,10 +40,29 @@ ORDER BY pm.Year ASC");
         ?></p>
     </div>
 </div>
+
 <hr>
+
+    <h2>What you will study</h2>
+    <div class="module-list">
+        <?php 
+        $currentYear = 0;
+        foreach ($modules as $mod): 
+            if ($currentYear != $mod['Year']): 
+                $currentYear = $mod['Year'];
+                echo "<h3>Year $currentYear</h3>";
+            endif;
+        ?>
+            <p><strong><?php echo htmlspecialchars($mod['ModuleName']); ?></strong> 
+               (Led by: <?php echo htmlspecialchars($mod['ModuleLeader']); ?>)</p>
+        <?php endforeach; ?>
+    </div>
+
+    <hr>
+
 <section id="interest-form">
         <h2>Register</h2>
-        <p>Become a Student Today. Leave your details below.</p>
+        <p>Become a Student Today! Leave your details below.</p>
         
         <form action="register-interest.php" method="POST">
             <input type="hidden" name="programme_id" value="<?php echo $id; ?>">
