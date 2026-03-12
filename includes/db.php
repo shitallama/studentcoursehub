@@ -1,7 +1,7 @@
 <?php
 // ---------- Database Connection (PDO) ----------
 $host = "localhost";
-$dbname = "test1";
+$dbname = "student_course_hub";
 $username = "root";   
 $password = "";     
 
