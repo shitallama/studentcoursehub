@@ -1,2 +1,4 @@
 # studentcoursehub
-The repository consists of my university project.
+The repository consists my project.
+In progress........🚧🧱🔨
+Will be available soon
