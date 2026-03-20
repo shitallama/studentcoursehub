@@ -35,7 +35,8 @@ Run this project with XAMPP (Apache + MySQL).
 
 5. Open the app:
 
-	http://localhost/studentcoursehub-xampp/
+	http://localhost/studentcoursehub-xampp/ 
+	http://localhost/studentcoursehub-main/ (if downloaded from GitHub, it renames the folder as studentcoursehub-main)
 
 ## Optional: Admin login seed
 
