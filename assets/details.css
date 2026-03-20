@@ -1,0 +1,153 @@
+/* Programme Details Page Specific Styles */
+@import 'style.css';
+
+main h1 {
+  color: var(--navy-800);
+  margin-bottom: 1.5rem;
+}
+
+/* Course Detail Section */
+.course-detail {
+  background: linear-gradient(135deg, var(--warm-gray-100), white);
+  padding: 2rem;
+  border-radius: 16px;
+  border-left: 4px solid var(--blue-light);
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.course-info {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--warm-gray-200);
+  margin-top: 1rem;
+}
+
+.course-info p {
+  line-height: 1.8;
+  color: var(--text-soft);
+}
+
+/* Module List */
+.module-list {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--warm-gray-200);
+  margin: 2rem 0;
+}
+
+.module-list h3 {
+  color: var(--navy-700);
+  border-bottom: 2px solid var(--blue-light);
+  padding-bottom: 0.75rem;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.2rem;
+}
+
+.module-list h3:first-of-type {
+  margin-top: 0;
+}
+
+.module-list p {
+  padding: 1rem 1.25rem;
+  background: var(--warm-gray-100);
+  border-radius: 10px;
+  margin: 0.75rem 0;
+  border: 1px solid var(--warm-gray-200);
+  transition: all 0.2s;
+}
+
+.module-list p:hover {
+  border-color: var(--blue-light);
+  transform: translateX(4px);
+}
+
+.module-list strong {
+  color: var(--navy-800);
+}
+
+/* Interest Form */
+#interest-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid var(--warm-gray-300);
+  box-shadow: var(--shadow-sm);
+  margin: 2rem 0;
+}
+
+#interest-form h2 {
+  color: var(--navy-800);
+  margin-top: 0;
+}
+
+#name, #email {
+  width: 100%;
+  padding: 14px 18px;
+  margin: 8px 0 20px 0;
+  border: 2px solid var(--warm-gray-200);
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background: var(--warm-gray-100);
+}
+
+#name:focus, #email:focus {
+  border-color: var(--navy-500);
+  background: white;
+  box-shadow: 0 0 0 4px rgba(26, 58, 156, 0.1);
+  outline: none;
+}
+
+button {
+  background-color: var(--blue-teal);
+  color: var(--navy-800);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid transparent;
+}
+
+button:hover {
+  background-color: var(--blue-teal-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--warm-gray-300), transparent);
+  margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .course-detail {
+    padding: 1.5rem;
+  }
+  
+  #interest-form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .module-list p {
+    padding: 0.75rem 1rem;
+  }
+  
+  #name, #email {
+    padding: 12px 14px;
+  }
+  
+  button {
+    width: 100%;
+  }
+}

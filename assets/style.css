@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Primary Navy Scale */
+  --navy-900: #001235;
+  --navy-800: #001E61;
+  --navy-700: #0B2A7A;
+  --navy-600: #1A3A9C;
+  --navy-500: #2F4EB0;
+  
+  /* Accent Blues */
+  --blue-light: #75caec;
+  --blue-teal: #88E3EE;
+  --blue-teal-hover: #6bc1d4;
+  
+  /* Neutrals */
+  --cream: #f7f6f1;
+  --warm-gray-100: #f5f4f0;
+  --warm-gray-200: #e9e6df;
+  --warm-gray-300: #DFDCD5;
+  --warm-gray-400: #c9c4bb;
+  
+  /* Text Colors */
+  --text-dark: #1e293b;
+  --text-soft: #334155;
+  --text-light: #f8fafc;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -2px rgba(0, 30, 97, 0.05);
+  --shadow-md: 0 20px 25px -5px rgba(0, 30, 97, 0.1);
+  --shadow-lg: 0 14px 30px rgba(0, 22, 70, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--warm-gray-100);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-y: scroll;
+  color: var(--text-dark);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, var(--navy-800) 0%, var(--navy-700) 100%);
+  color: var(--cream);
+  padding: 20px;
+  box-shadow: var(--shadow-md);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+legend {
+  color: var(--cream);
+  font-size: 30px;
+  font-weight: bold;
+  display: flex;
+  justify-content: left;
+}
+
+span {
+  color: var(--blue-light);
+  font-size: 30px;
+  font-weight: bold;
+  display: inline-block;
+  text-shadow: 0 0 10px rgba(117, 202, 236, 0.3);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--cream);
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+
+nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dashboard-link {
+  background: none;
+  border-radius: 6px;
+  transition: background 0.3s ease;
+}
+.dashboard-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* User Menu */
+/* User Menu */
+.user-menu {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 2px solid rgba(235, 232, 224, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  z-index: 1001;
+}
+
+.user-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--blue-light);
+}
+
+.user-menu-toggle img {
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 180px;
+  display: none;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  z-index: 1000;
+  border: 1px solid var(--warm-gray-200);
+  margin-top: 8px; /* This creates space but also causes the issue */
+}
+
+/* Fix: Add a transparent bridge to connect toggle and dropdown */
+.user-menu::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  height: 20px; /* Creates an invisible bridge */
+  background: transparent;
+  z-index: 999;
+}
+
+.dropdown-content a {
+  margin: 0;
+  padding: 12px 16px;
+  color: var(--text-dark);
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: block;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  color: var(--navy-800);
+  background: var(--warm-gray-100);
+}
+
+/* Show dropdown on hover */
+.user-menu:hover .dropdown-content {
+  display: flex;
+}
+
+/* Also keep it visible when hovering the dropdown itself */
+.dropdown-content:hover {
+  display: flex;
+}
+
+/* Alternative: Show on hover with no gap */
+.user-menu {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.user-menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 2px solid rgba(235, 232, 224, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.user-menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--blue-light);
+}
+
+.user-menu-toggle img {
+  display: block;
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+.dropdown-content {
+  position: absolute;
+  top: calc(100% + 10px); /* Add small gap */
+  right: 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  z-index: 1000;
+  border: 1px solid var(--warm-gray-200);
+  transition: all 0.2s;
+  transform: translateY(-10px);
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+/* Add invisible bridge */
+.user-menu {
+  position: relative;
+  padding-bottom: 10px; /* Creates hover area */
+  margin-bottom: -10px; /* Compensate layout */
+}
+
+/* Show dropdown with smooth animation */
+.user-menu:hover .dropdown-content,
+.user-menu:focus-within .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+
+/* Fix for mobile */
+@media (max-width: 768px) {
+  .user-menu {
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  
+  .dropdown-content {
+    top: 100%;
+    right: 50%;
+    transform: translateX(50%) translateY(-10px);
+  }
+  
+  .user-menu:hover .dropdown-content {
+    transform: translateX(50%) translateY(0);
+  }
+}
+
+/* Main Layout */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+  width: 100%;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, var(--navy-900), var(--navy-800));
+  color: var(--cream);
+  padding: 30px 20px;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: var(--cream);
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--blue-light);
+}
+
+/* Responsive - Global */
+@media (max-width: 768px) {
+  header {
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .logo {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  nav {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .dropdown-content {
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
