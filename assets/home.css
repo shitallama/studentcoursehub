@@ -1,0 +1,177 @@
+/* Home Page Specific Styles */
+@import 'style.css';
+
+main h1 {
+  color: var(--navy-800);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+main h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-light), var(--blue-teal));
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+/* Filter Section */
+.filter {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--warm-gray-300);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.filter input,
+.filter select {
+  padding: 12px 16px;
+  border: 2px solid var(--warm-gray-300);
+  border-radius: 8px;
+  background: white;
+  font-size: 1rem;
+  transition: all 0.2s;
+  min-width: 0;
+  flex: 1 1 220px;
+}
+
+.filter input:focus,
+.filter select:focus {
+  border-color: var(--navy-500);
+  box-shadow: 0 0 0 4px rgba(47, 78, 176, 0.1);
+  outline: none;
+}
+
+.reset-link {
+  color: var(--navy-800);
+  text-decoration: underline;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.reset-link:hover {
+  color: var(--navy-600);
+}
+
+/* Programmes Grid */
+.programmes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Cards */
+.card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--warm-gray-200);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--blue-light), var(--blue-teal));
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card h3 {
+  color: var(--navy-800);
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+}
+
+.card p {
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.apply-button {
+    border: none;
+    background: linear-gradient(135deg, var(--blue-light), var(--blue-teal));
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: back 0.2s;
+    cursor: pointer;
+    text-align: center;
+}
+.apply-button:hover {
+    background: linear-gradient(135deg, var(--blue-teal), var(--blue-light));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .programmes-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  main h1 {
+    font-size: 2rem;
+  }
+  
+  .filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filter input,
+  .filter select,
+  .filter button {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+  
+  .programmes-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1.25rem;
+  }
+}

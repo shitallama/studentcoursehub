@@ -1,0 +1,35 @@
+:root {
+  /* Primary Navy Scale */
+  --navy-900: #001235;
+  --navy-800: #001E61;
+  --navy-700: #0B2A7A;
+  --navy-600: #1A3A9C;
+  --navy-500: #2F4EB0;
+  
+  /* Accent Blues */
+  --blue-light: #75caec;
+  --blue-teal: #88E3EE;
+  --blue-teal-hover: #6bc1d4;
+  
+  /* Neutrals */
+  --cream: #f7f6f1;
+  --warm-gray-100: #f5f4f0;
+  --warm-gray-200: #e9e6df;
+  --warm-gray-300: #DFDCD5;
+  --warm-gray-400: #c9c4bb;
+  
+  /* Text Colors */
+  --text-dark: #1e293b;
+  --text-soft: #334155;
+  --text-light: #f8fafc;
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 6px -2px rgba(0, 30, 97, 0.05);
+  --shadow-md: 0 20px 25px -5px rgba(0, 30, 97, 0.1);
+  --shadow-lg: 0 14px 30px rgba(0, 22, 70, 0.22);
+
+  --admin-sidebar: #0f172a;
+  --admin-sidebar-light: #1e293b;
+  --admin-hover: #2d3a5e;
+  --admin-border: #e2e8f0;
+}
